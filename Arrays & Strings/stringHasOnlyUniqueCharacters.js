@@ -37,3 +37,13 @@ const isUniqueInnerLoop = string => {
   }
   return true;
 }
+
+const isUniqueSort = string => {
+  string = string.sort();
+  for (let i = 0; i < string.length - 1; i++) {
+    if (string.charAt(i) === string.charAt(i + 1)) {
+      return false;
+    }
+  }
+  return true;
+}
