@@ -19,3 +19,21 @@ const isUniqueArrayLibrary = string => {
   }
   return true;
 }
+
+// If additional data structures are not available (in this case, a library), you would search for each letter to be repeated later in the string;
+// Average time complexity is O(N log N); space complexity is O(1);
+  // iterate over string
+    // iterate over string with counter set to one step ahead of initial iterating loop
+      // if the string's character at first counter is equal to the string's character at second counter
+        // return false
+  // return true by default
+const isUniqueInnerLoop = string => {
+  for (let i = 0; i < string.length - 1; i++) {
+    for (let j = i + 1; j < string.length; j++) {
+      if (string.charAt(j) === string.charAt(i)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
