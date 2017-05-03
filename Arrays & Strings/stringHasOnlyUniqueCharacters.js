@@ -47,3 +47,14 @@ const isUniqueSort = string => {
   }
   return true;
 }
+
+const isUniqueSet = string => {
+  let library = new Set();
+  for (let i = 0; i < string.length; i++) {
+    if (library.has(string.charAt(i))) {
+      return false;
+    }
+    library.add(string.charAt(i))
+  }
+  return true;
+}
