@@ -4,8 +4,8 @@ const oneAway = (string1, string2) => {
   if (string1 === string2) {
     return true;
   }
+  let flag = 0;
   if (string1.length === string2.length) {
-    let flag = 0;
     for (let i = 0; i < string1.length; i++) {
       if (string1.charAt(i) !== string2.charAt(i)) {
         flag++;
@@ -15,5 +15,16 @@ const oneAway = (string1, string2) => {
       }
     }
   }
-  
+  let shortString = string1.length > string2.length ? string2 : string1;
+  let longString = string1.length > string2.length ? string1 : string2;
+  for (let i = 0, j = 0; i < shortString.length; i++, j++) {
+    if (shortString.charAt(i) !== longString.charAt(j)) {
+      i--;
+      flag++;
+    }
+    if (flag > 1) {
+      return false;
+    }
+  }
+  return true;
 }
