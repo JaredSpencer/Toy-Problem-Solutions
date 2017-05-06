@@ -14,16 +14,17 @@ const oneAway = (string1, string2) => {
         return false;
       }
     }
-  }
-  let shortString = string1.length > string2.length ? string2 : string1;
-  let longString = string1.length > string2.length ? string1 : string2;
-  for (let i = 0, j = 0; i < shortString.length; i++, j++) {
-    if (shortString.charAt(i) !== longString.charAt(j)) {
-      i--;
-      flag++;
-    }
-    if (flag > 1) {
-      return false;
+  } else {
+    let shortString = string1.length > string2.length ? string2 : string1;
+    let longString = string1.length > string2.length ? string1 : string2;
+    for (let i = 0, j = 0; i < shortString.length; i++, j++) {
+      if (shortString.charAt(i) !== longString.charAt(j)) {
+        i--;
+        flag++;
+      }
+      if (flag > 1) {
+        return false;
+      }
     }
   }
   return true;
