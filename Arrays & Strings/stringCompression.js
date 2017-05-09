@@ -2,17 +2,14 @@
 
 var stringCompression = (string) => {
   let compressedString = '';
-  let currentLetterCount = 1;
-  let currentLetter = string.charAt(0);
 
-  for (let i = 1; i <= string.length; i++) {
-    if (string.charAt(i) !== currentLetter) {
-      compressedString += currentLetter + currentLetterCount;
-      currentLetter = string.charAt(i + 1);
-      currentLetterCount = 1;
-    } else {
-      currentLetterCount++;
+  for (let i = 0; i < string.length; i++) {
+    let currentLetter = string.charAt(i);
+    let startPoint = i;
+    while (i + 1 < string.length && currentLetter === string.charAt(i + 1)) {
+      i++
     }
+    compressedString += currentLetter + (i - startPoint + 1);
   }
-  return compressedString;
+  return compressedString.length < string.length ? compressedString : string;
 }
