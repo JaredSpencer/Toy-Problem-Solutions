@@ -5,11 +5,11 @@ const removeDuplicates = (list) => {
   let node = list.head;
   library.add(node.value);
   while (node.next) {
-    if (!library.has(node.next.value)) {
+    if (library.has(node.next.value)) {
+      node.next = node.next.next;
+    } else {
       library.add(node.next.value);
       node = node.next;
-    } else {
-      node = node.next.next;
     }
   }
   return list;
