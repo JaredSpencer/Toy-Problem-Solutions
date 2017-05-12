@@ -10,8 +10,9 @@ const deleteMiddleNode = (list, value) => {
     if (node.next.value === value) {
       node.next = node.next.next;
       return node.next.value;
+    } else {
+      node = node.next;
     }
-    node = node.next;
   }
   return list;
 }
