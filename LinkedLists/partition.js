@@ -10,9 +10,9 @@ const partition = (list, value) => {
       node = node.next
     }
   }
-  while (head !== node) {
-    if (head.value > node.value) {
-      let temp = head;
+  while (head.next.value !== node.value) {
+    if (head.next.value > node.value) {
+      let temp = head.next;
       temp.next = node.next;
       node.next = temp;
       // now account for having removed it from the front half of the list. Will need to use head.next since you're removing items.
