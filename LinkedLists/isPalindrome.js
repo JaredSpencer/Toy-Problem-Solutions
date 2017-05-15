@@ -14,9 +14,8 @@ const isPalindrome = list => {
     node = node.next;
   }
 
-  for (let i = Math.floor(list.length / 2); i >= 0; i--) {
-    n = stack.pop();
-    if (n.value !== node.value) {
+  while (node) {
+    if (node.value !== stack.pop()) {
       return false;
     }
     node = node.next;
