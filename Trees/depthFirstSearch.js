@@ -54,3 +54,21 @@ const dps = (list, callback) => {
     }
   }
 }
+
+const dfs = (list, callback) => {
+  let stack = [list];
+  let n;
+
+  while (stack.length) {
+    n = stack.pop();
+    callback(n);
+
+    if (!n.children) {
+      continue;
+    }
+
+    for (let i = n.children.length - 1; i >= 0; i--) {
+      stack.push(n.children[i]);
+    }
+  }
+}

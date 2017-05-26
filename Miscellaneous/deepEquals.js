@@ -13,27 +13,15 @@
   */
 
   const deepEquals = (apples, oranges) => {
-    if (apples === oranges) {
-      return true;
-    }
-    if ((apples && !oranges) || (!apples && oranges)) {
-      return false;
-    }
-    if (!(apple instanceof Object) || !(orange instanceof Object)) {
-      return false;
-    }
+    if (apples === oranges) { return true; }
+    if (apples && !oranges || !apples && oranges) { return false; }
+    if (!(apples instanceof Object) || !(oranges instanceof Object)) { return false; }
     let appleKeys = Object.keys(apples);
     let orangeKeys = Object.keys(oranges);
-    if (appleKeys.length !== orangeKeys.length) {
-      return false;
-    }
-    if (appleKeys.length === 0) {
-      return true; // two empty objects are equal
-    }
+    if (appleKeys.length !== orangeKeys.length) { return false; }
+    if (appleKeys.length === 0) { return true; } // two empty objects are equal
     for (let i = 0; i < appleKeys.length; i++) {
-      if (!deepEquals(apple[appleKeys[i]], orange[orangeKeys[i]])) {
-        return false;
-      }
+      if (!deepEquals(apples[appleKeys[i]], oranges[appleKeys[i]])) { return false; }
     }
     return true;
   }
