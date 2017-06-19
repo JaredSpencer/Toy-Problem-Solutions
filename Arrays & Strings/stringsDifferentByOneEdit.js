@@ -1,7 +1,7 @@
 // One Away: There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.
 
 const oneAway = (string1, string2) => {
-  if (!string1 || ! string2) {
+  if (!string1 || !string2) {
     return false;
   }
   if (string1 === string2) {
@@ -34,7 +34,7 @@ const oneAway = (string1, string2) => {
 }
 
 const oneAway = (string1, string2) => {
-  if (!string1 || ! string2) {
+  if (!string1 || !string2) {
     return false;
   }
   if (Math.abs(string1.length - string2.length)) {

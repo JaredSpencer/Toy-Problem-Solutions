@@ -10,7 +10,7 @@ const isPalindrome = list => {
     node = node.next;
   }
 
-  if (list.length % 2 !==) {
+  if (list.length % 2 !== 0) {
     node = node.next;
   }
 

@@ -14,3 +14,5 @@ const palindromePermutation = string => {
 }
 
 array.reduce((a,b) => { return a + b; })
+
+array.reduce((a,b) => { return a + b; })

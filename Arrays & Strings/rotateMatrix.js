@@ -25,3 +25,15 @@ const rotateMatrixCounterClockwise = (matrix) => {
   }
   return matrix;
 }
+
+const rotateMatrix = matrix => {
+  matrix = matrix.reverse();
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < i; j++) {
+      let current = matrix[i][j];
+      matrix[i][j] = matix[j][i];
+      matrix[j][i] = current;
+    }
+  }
+  return matrix;
+}
