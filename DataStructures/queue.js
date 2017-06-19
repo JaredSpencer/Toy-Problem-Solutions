@@ -21,3 +21,26 @@ class Queue {
     }
   }
 }
+
+class Queue {
+  constructor() {
+    this.storage = [];
+    this.count = 0;
+  }
+  length() {
+    return this.count;
+  }
+  enqueue(value) {
+    this.storage.push(value);
+    this.count++;
+  }
+  dequeue() {
+    if (this.count > 0) {
+      this.count--;
+      return this.storage.unshift();
+      // alternatively, return this.storage[this.count];
+    } else {
+      return 'cannot dequeue, queue is empty';
+    }
+  }
+}
