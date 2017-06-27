@@ -7,7 +7,7 @@ var swap = (array, i, j) => {
 
 var maxHeapify = (array, i, length) => {
   while(true) {
-    let left = i * 2 + 1; 
+    let left = i * 2 + 1;
     let right = i * 2 + 2;
     let largest = i;
 
