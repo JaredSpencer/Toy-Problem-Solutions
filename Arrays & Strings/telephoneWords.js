@@ -3,20 +3,39 @@ Input:Digit string "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 */
 
-const letterCombinations = string => {
+var letterCombinations = string => {
+  if (string === '') {
+    return [];
+  }
+  let result = [];
+
   let letterDictionary = {
     0: '0',
     1: '1',
-    2: 'ABC',
-    3: 'DEF',
-    4: 'GHI',
-    5: 'JKL',
-    6: 'MNO',
-    7: 'PQRS',
-    8: 'TUV',
-    9: 'WXYZ'
+    2: 'abc',
+    3: 'def',
+    4: 'ghi',
+    5: 'jkl',
+    6: 'mno',
+    7: 'pqrs',
+    8: 'tuv',
+    9: 'wxyz'
   };
-  for (let i = 0; i < string.length; i++) {
-    
+
+  let wordBuilder = (word, digits) => {
+    if (digits.length === 0) {
+      result.push(word);
+      return;
+    }
+
+    let currentDigit = digits[0];
+    let remaingingDigits = digits.slice(1);
+    let letters = letterDictionary[currentDigit].split('');
+
+    for (let i = 0; i < letters.length; i++) {
+      wordBuilder(word + letters[i], remaingingDigits);
+    }
   }
+  wordBuilder('', string.split(''));
+  return result;
 }
