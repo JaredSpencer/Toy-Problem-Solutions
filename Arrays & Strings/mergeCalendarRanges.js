@@ -1,3 +1,11 @@
+/*
+  We need to collapse a series of values that are potentially overlapping.
+  First, sort the series based on one of the values consistent among all the elements.
+  Then compare the second value of the current element with the first value of the following element.
+  If there is overlap, merge the two.
+*/
+
+
 
 const mergeCalendarRanges = listOfRanges => {
   let sortedMeetings = listOfRanges.slice().sort((a,b) => {

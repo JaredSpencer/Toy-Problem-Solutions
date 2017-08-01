@@ -31,14 +31,16 @@ const allAnagrams = word => {
 }
 
 const allAnagrams = word => {
-  let possibilities = new Set();
+  let results = [];
 
   let anagram = (ana, str) => {
-    if (str === '') {
-      possibilities.add(ana);
+    if (str.length === 0) {
+      results.push(ana);
     }
     for (let i = 0; i < str.length; i++) {
-      anagram()
+      anagram(ana + str.charAt(i), str.slice(0, i) + str.slice(i + 1));
     }
   }
+  anagram('', word);
+  return results;
 }
