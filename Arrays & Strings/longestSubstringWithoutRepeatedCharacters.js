@@ -29,6 +29,25 @@ var longestUniqueSubstrings = string => {
   }
   return ans;
 }
+var longestUniqueSubstrings = string => {
+  let n = string.length;
+  let i = 0, j = 0, ans = 0;
+  let set = new Set();
+
+  while (i < n && j < n) {
+    if (!set.has(string.charAt(i))) {
+      set.add(string.charAt(i));
+      j++;
+      ans = Math.max(ans, j - 1);
+    } else {
+      set.delete(string.charAt(i));
+      i++
+    }
+  }
+  return ans;
+}
+
+
 // 'abcabcbb'
 var longestUniqueSubstrings = string => {
   let n = string.length; // 8
