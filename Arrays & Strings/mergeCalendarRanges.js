@@ -9,7 +9,7 @@
 
 const mergeCalendarRanges = listOfRanges => {
   let sortedMeetings = listOfRanges.slice().sort((a,b) => {
-    return a.startTime > b.startTime ? 1 : -1;
+    return a.startTime < b.startTime ? -1 : 1;
   });
 
   let mergedMeetings = [sortedMeetings[0]];

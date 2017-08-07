@@ -35,8 +35,8 @@ var longestUniqueSubstrings = string => {
   let set = new Set();
 
   while (i < n && j < n) {
-    if (!set.has(string.charAt(i))) {
-      set.add(string.charAt(i));
+    if (!set.has(string.charAt(j))) {
+      set.add(string.charAt(j));
       j++;
       ans = Math.max(ans, j - 1);
     } else {

@@ -15,23 +15,23 @@ var search = (nums, target) => {
   console.log(sortedArray);
   // binarysearch the sorted array
   let binarySearch = (array, key) => {
-    let low = 0,
-        high = array.length - 1,
-        mid,
-        currentElement;
+    let high = array.length - 1;
+    let low = 0;
+
     while (low <= high) {
-        mid = ((low + high) / 2);
-        currentElement = array[mid];
-        if (currentElement < key) {
-            low = mid + 1;
-        } else if (currentElement > key) {
-            high = mid - 1;
-        } else {
-            return mid;
-        }
+      let mid = (high - low) / 2 || 0;
+      let midVal = array[mid];
+
+      if (target < midVal) {
+        mid = high - 1;
+      } else if (target > midVal) {
+        low = mid + 1;
+      } else {
+        return mid;
+      }
     }
     return -1;
-}
+  }
 
   return binarySearch(sortedArray, target);
 }
